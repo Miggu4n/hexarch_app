@@ -1,5 +1,6 @@
 /core/build
 /core/node_modules
 /core/.env*
+!/core/.env.sample
 
 *volume*/
