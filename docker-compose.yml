@@ -1,5 +1,5 @@
 services:
-  birthdaysdb:
+  birthdays_db:
     image: mongo
     ports:
       - "27017:27017"
@@ -7,13 +7,13 @@ services:
       - ./birthdays_volume:/data/db
     restart: unless-stopped
 
-  birthdayserver:
+  birthday_core:
     depends_on:
-      - "birthdaydb"
+      - "birthdays_db"
     build:
       context: ./core
     environment:
-      DB_HOST: birthdaysdb
+      DB_HOST: birthday_sdb
       DB_PORT: 27017
       DB_NAME: birthdays
     ports:
