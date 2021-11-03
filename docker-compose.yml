@@ -13,7 +13,7 @@ services:
     build:
       context: ./core
     environment:
-      DB_HOST: birthday_sdb
+      DB_HOST: birthdays_db
       DB_PORT: 27017
       DB_NAME: birthdays
     ports:
