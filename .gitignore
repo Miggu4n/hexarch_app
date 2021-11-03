@@ -1,0 +1,5 @@
+/core/build
+/core/node_modules
+/core/.env*
+
+*volume*/
