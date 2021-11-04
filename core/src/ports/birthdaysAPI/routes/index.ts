@@ -1,16 +1,16 @@
 // Express
-import { celebrate } from "celebrate";
 import express from "express";
-const birthdayRoutes = express.Router();
+const birthdays = express.Router();
 
 // Routes
 import getBirthdays from "./middlewares/getBirthdays";
 import newBirthday from "./middlewares/newBirthday";
-import newBirthdayBodyValidation from "./validations/newBirthday";
 
 // Validations
+import { celebrate } from "celebrate";
+import newBirthdayBodyValidation from "./validations/newBirthday";
 
-birthdayRoutes.get("/", getBirthdays);
-birthdayRoutes.post("/", celebrate(newBirthdayBodyValidation), newBirthday);
+birthdays.get("/", getBirthdays);
+birthdays.post("/", celebrate(newBirthdayBodyValidation), newBirthday);
 
-export default birthdayRoutes;
+export default birthdays;

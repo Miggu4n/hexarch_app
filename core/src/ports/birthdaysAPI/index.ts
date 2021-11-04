@@ -2,18 +2,18 @@
 import express from "express";
 import cors from "cors";
 
-// Database
+// DB
 import connect from "../../db";
 connect("birthaysAPI");
 
 // ENV Variables
-const SERVER_PORT: number = process.env.SERVER_PORT || 4000;
-
-// Routes
-import birthdayRoutes from "./routes";
+const SERVER_PORT: string = process.env.SERVER_PORT || "4000";
 
 // Celebrate
 import { errors } from "celebrate";
+
+// Routes
+import birthdayRoutes from "./routes";
 
 // Main
 const server = express();

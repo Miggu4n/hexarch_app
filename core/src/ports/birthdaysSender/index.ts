@@ -1,9 +1,15 @@
 // Database
-import { format } from "date-fns";
 import connect from "../../db";
+connect("birthaySender");
 
-import Birthday from "../../db/schemas/birthdaySchema";
+// Interfaces
 import IBirthday from "../../interfaces/birthday";
+
+// DB Schema
+import Birthday from "../../db/schemas/birthdaySchema";
+
+// Date-fns
+import { format } from "date-fns";
 
 // Sendgrid
 const sgMail = require("@sendgrid/mail");
@@ -13,10 +19,7 @@ sgMail.setApiKey(SENDGRID_API_KEY);
 // Cron
 const CronJob = require("cron").CronJob;
 
-// Connect to db
-connect("birthaySender");
-
-// Mail
+// Main
 const birthayReminder = async () => {
   const today = format(new Date(), "yyyy-MM-dd");
   const filters = { birthday: today };
