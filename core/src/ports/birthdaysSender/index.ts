@@ -34,7 +34,7 @@ const birthayReminder = async () => {
       to: email, // Change to your recipient
       from: "migguan97@gmail.com", // Change to your verified sender
       subject: `Happy Birthday ${firstName}! `,
-      html: `<div><h1>Happy birthday, ${firstName}! <p></div>`,
+      html: `<div><h1>Happy birthday, ${firstName}! </h1></div>`,
     };
 
     try {
